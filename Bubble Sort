@@ -1,0 +1,36 @@
+import java.util.*;
+public class BubbleSort {
+    void bubbleSort(int array[]) //Creating a function to check the conditions for sorting an array
+    {
+        int n = array.length;
+        for (int loopOnPower = 0; loopOnPower < n-1; loopOnPower++)
+            for (int anotherLoopOnPower = 0; anotherLoopOnPower < n-loopOnPower-1; anotherLoopOnPower++)
+                if (array[anotherLoopOnPower] > array[anotherLoopOnPower+1]) //Condition to check if previous element is greater than next element
+                {
+                    int temporary = array[anotherLoopOnPower]; //Swap if condition becomes true
+                    array[anotherLoopOnPower] = array[anotherLoopOnPower+1];
+                    array[anotherLoopOnPower+1] = temporary;
+                }
+    }
+
+    void printArray(int array[]) //Creating another function to print sorted array
+    {
+        int n = array.length;
+        for (int loopOnPower=0; loopOnPower<n; ++loopOnPower)
+            System.out.print(array[loopOnPower] + " "); //Printing sorted array
+
+    }
+
+    public static void main(String args[])
+    {
+        BubbleSort obj = new BubbleSort(); //Creating an object of class BubbleSort
+        int array[] = {12, 21, 2, 8, 27};
+        obj.bubbleSort(array); //Calling first function
+        System.out.println("Sorted array");
+        obj.printArray(array); //Calling second function
+    }
+}
+
+
+
+![Screenshot (181)](https://user-images.githubusercontent.com/74056455/103309633-99469e00-4a3b-11eb-90c8-5d30a02fe0c8.png)
